@@ -27,3 +27,34 @@ serverName: this.newServerName,
 serverContent: this.newServerContent,
 });
 }
+
+5. Encapuslation is how Angular does CSS.
+   // encapsulation: ViewEncapsulation.Emulated is the default, but None or Native (ShadowDom) also work
+   with None making the CSS of the file apply globaly
+
+6. Local References
+
+onAddServer(nameInput: HTMLInputElement) {
+this.serverCreated.emit({
+serverName: nameInput.value,
+serverContent: this.newServerContent,
+});
+}
+
+onAddBlueprint(nameInput: HTMLInputElement) {
+this.blueprintCreated.emit({
+serverName: nameInput.value,
+serverContent: this.newServerContent,
+});
+}
+
+<input type="text" class="form-control" #serverNameInput />
+<label>Server Content</label>
+<input type="text" class="form-control" [(ngModel)]="newServerContent" />
+<br />
+<button class="btn btn-primary" (click)="onAddServer(serverNameInput)">
+Add Server
+</button>
+<button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)">
+Add Server Blueprint
+</button>
