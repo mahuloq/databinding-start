@@ -58,3 +58,39 @@ Add Server
 <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)">
 Add Server Blueprint
 </button>
+
+7. @ViewChild
+
+By changing
+
+<input type="text" class="form-control" [(ngModel)]="newServerContent" />
+
+to
+
+<input type="text" class="form-control" #serverContentInput />
+
+we can acess the data in our TS file by changing
+
+newServerContent = "";
+
+to
+
+@ViewChild("serverContentInput", { static: true })
+serverContentInput: ElementRef;
+
+you also have to add elementref and view child to the import list.
+
+You can then use the information
+
+    onAddServer(nameInput: HTMLInputElement) {
+    this.serverCreated.emit({
+      serverName: nameInput.value,
+      serverContent: this.serverContentInput.nativeElement.value,
+    });
+
+}
+
+onAddBlueprint(nameInput: HTMLInputElement) {
+this.blueprintCreated.emit({
+serverName: nameInput.value,
+serverContent: this.serverContentInput.nativeElement.value,
