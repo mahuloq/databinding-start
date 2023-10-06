@@ -94,3 +94,19 @@ onAddBlueprint(nameInput: HTMLInputElement) {
 this.blueprintCreated.emit({
 serverName: nameInput.value,
 serverContent: this.serverContentInput.nativeElement.value,
+
+8. <ng-content></ng-content>
+   replacing this below in server element
+   tag in a component will allow the passing of content in the app component between
+
+<p>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{
+          serverElement.content
+        }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{
+          serverElement.content
+        }}</em>
+      </p>
+    </app-server
+
+    here we had to replace element with serverElement
