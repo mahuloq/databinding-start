@@ -128,3 +128,5 @@ ngAfterViewInit - Called after the component's view (and child views) has beeen 
 ngAfterViewChecked - Called every time the view (and Child views) have been checked
 
 ngOnDestroy - Called ocne the component is about to be destroyed.
+
+10. LifeCycle Hooks and Templates
