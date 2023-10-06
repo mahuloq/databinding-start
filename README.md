@@ -110,3 +110,21 @@ serverContent: this.serverContentInput.nativeElement.value,
     </app-server
 
     here we had to replace element with serverElement
+
+9. ngOnInit()
+
+ngOnChanges - Called after a bouind input propert changes.
+
+ngOnInit- Called once the component is initialized.
+
+ndDoCheck - Called during every change detection run.
+
+ngAfterContentInit - called after content (ng-contet) has been projected into view
+
+ngAfterContentChecked - Called every time the projected content has been checked.
+
+ngAfterViewInit - Called after the component's view (and child views) has beeen initialized.
+
+ngAfterViewChecked - Called every time the view (and Child views) have been checked
+
+ngOnDestroy - Called ocne the component is about to be destroyed.
