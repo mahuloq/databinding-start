@@ -29,3 +29,20 @@
     </app-server-element>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-6">
+    <app-game-control
+      (intervalFired)="onIntervalFired($event)"
+    ></app-game-control>
+  </div>
+  <div class="col-xs-6">
+    <app-odd
+      *ngFor="let oddNumber of oddNumbers"
+      [number]="oddNumber"
+    ></app-odd>
+    <app-even
+      *ngFor="let evenNumber of evenNumbers"
+      [number]="evenNumber"
+    ></app-even>
+  </div>
+</div>
